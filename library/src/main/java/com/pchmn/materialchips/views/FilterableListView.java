@@ -133,7 +133,7 @@ public class FilterableListView extends RelativeLayout {
         mChipsInput.getLocationInWindow(coord);
         ViewGroup.MarginLayoutParams layoutParams = (MarginLayoutParams) getLayoutParams();
 	if(layoutParams == null) {
-		layoutParams = new ViewGroup.MarginLayoutParams(100, 100)
+		layoutParams = new ViewGroup.MarginLayoutParams(100, 100);
 	}
 	layoutParams.topMargin = coord[1] + mChipsInput.getHeight();
 	// height of the keyboard
