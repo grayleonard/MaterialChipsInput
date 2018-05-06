@@ -132,12 +132,13 @@ public class FilterableListView extends RelativeLayout {
         int[] coord = new int[2];
         mChipsInput.getLocationInWindow(coord);
         ViewGroup.MarginLayoutParams layoutParams = (MarginLayoutParams) getLayoutParams();
-	if(layoutParams != null) {
-		layoutParams.topMargin = coord[1] + mChipsInput.getHeight();
-		// height of the keyboard
-		layoutParams.bottomMargin = rootView.getHeight() - r.bottom;
-		setLayoutParams(layoutParams);
+	if(layoutParams == null) {
+		layoutParams = new ViewGroup.MarginLayoutParams(100, 100)
 	}
+	layoutParams.topMargin = coord[1] + mChipsInput.getHeight();
+	// height of the keyboard
+	layoutParams.bottomMargin = rootView.getHeight() - r.bottom;
+	setLayoutParams(layoutParams);
 
         AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(200);
